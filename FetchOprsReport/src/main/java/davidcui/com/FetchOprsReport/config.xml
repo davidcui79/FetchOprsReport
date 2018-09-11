@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow name="google">
+    <item name="1" url="http://www.google.com">
+		<status type="single" value="200">
+			<action message="200OK" />
+		</status> 
+		<status type="range" min="201" max="299">
+			<action message="Partial success" />
+		</status>
+		<status type="default">
+			<action message="Fail" exec="2"/>
+		</status>
+	</item>
+	<item name="2" url="http://www.amazon.com">
+		<status type="range" min="200" max="299">
+			<action message="Success" />
+		</status>
+		<status type="default">
+			<action message="Fail" />
+		</status>
+	</item>
+</workflow>
